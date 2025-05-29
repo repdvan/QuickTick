@@ -10,9 +10,7 @@ namespace QuickTickTestnet48
         {
             Console.WriteLine("Hello, World!");
 
-            using QuickTickTimer timer = new(1000.0 / 60.0);
-            timer.AutoReset = true;
-            timer.Elapsed += Timer_Elapsed;
+            using QuickTickTimer timer = new(1000.0 / 60.0, Timer_Elapsed, true);
             timer.Start();
 
             Thread.Sleep(1000); // Run for 5 seconds
